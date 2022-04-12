@@ -25,7 +25,7 @@ func primeRoutine(targetLine int, primeChan chan int) {
 		// prime number check
 		if checkPrime(i) && targetLine < i {
 			// Send data to channel
-			primeChan <- i // [Key Points : Transmission Channel]
+			primeChan <- i // [Key Points]
 		}
 	}
 }
@@ -43,7 +43,7 @@ func main() {
 	go primeRoutine(targetLine, primeChan)
 
 	// Receive data from channel
-	primeResult := <-primeChan // [Key Points : Receiving Channel]
+	primeResult := <-primeChan // [Key Points]
 
 	// Value Output
 	fmt.Println(primeResult)
